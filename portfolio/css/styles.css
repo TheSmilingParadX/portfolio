@@ -1,0 +1,272 @@
+/*
+COLOR PALETTE
+
+void maroon     #170005     "primary & background"
+neon aqua       #69e6f8     "headers"
+chrome static   #d6d6d6     "text"
+pulse red       #ff003c     "links & extras"
+nightcore       #0a0a0a     "footer"
+*/
+
+/* 
+
+*/
+
+/* GLOBAL STYLES
+--------------------------------------------------*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #170005;
+    color: #d6d6d6;
+    margin: 0;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+h1, h2, h3 {
+    color: #69e6f8;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 7rem;
+    line-height: 0.85;
+}
+
+h2 {
+    font-size: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/* links */
+a {
+    color: #ff003c;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    background: #ff003c;
+    color: #69e6f8;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
+}
+
+/* HOME
+--------------------------------------------------*/
+.home {
+    background: url(../images/red_blood.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.home .content-wrapper {
+    flex: 1 0 auto;
+}
+
+.content-bg {
+    background: rgb(10 10 10  / 0.9);
+    padding: 30px;
+}
+
+@media screen and (max-width:650px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }
+    .content-bg {
+        padding: 20px;
+    }
+}
+
+/* RESUME
+--------------------------------------------------*/
+.resume header::before {
+    background: url(../images/red_blood.jpg) top;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 375px;
+}
+
+.resume-section {
+    margin-bottom: 50px;
+}
+
+.resume-section h2 {
+    border-bottom: 2.5px dashed #ff003c;
+}
+
+.download-link {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+
+@media screen and (max-width:1200px) {
+    .download-link {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .resume header::before {
+        height: 200px;
+    }
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 2.6rem;
+    }
+}
+
+/* Profile
+-------------------------*/
+
+/* Projects
+-------------------------*/
+.project-item {
+    margin: 30px 0;
+}
+
+.project-item img {
+    width: 300px;
+}
+
+@media screen and (min-width:860px) {
+    .project-item {
+        display: flow-root;
+    }
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width:650px) and (max-width:859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+    .project-item img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .project-item img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Work Experience
+-------------------------*/
+.work-item {
+    margin: 30px 0;
+}
+
+.work-details p {
+    margin: 0;
+}
+
+@media screen and (min-width:860px) {
+    .work-item {
+        display: grid;
+        grid-template-columns: 300px 2fr;
+        column-gap: 20px;
+    }
+    .work-summary p:first-child {
+        margin-top: 0;
+    }
+}
+
+/* Education
+-------------------------*/
+.education-item {
+    margin: 30px 0;
+}
+
+.education-item p {
+    margin: 0;
+}
+
+/* FOOTER
+--------------------------------------------------*/
+footer {
+    background: #0a0a0a;
+}
+
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+
+.socials li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.socials img {
+    width: 32px;
+}
+
+.socials img:hover {
+    opacity: 0.7;
+}
+
+@media screen and (min-width:860px) {
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width:859) {
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+}
