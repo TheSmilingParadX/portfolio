@@ -483,6 +483,14 @@ footer {
     margin-bottom: 30px;
 }
 
+.modal-video {
+    width: 100%;
+    border: 3px solid #ff003c;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background: #000;
+}
+
 .modal-header {
     margin-bottom: 30px;
 }

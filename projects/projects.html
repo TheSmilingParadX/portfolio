@@ -88,7 +88,7 @@
            data-image-titles="agony,depression,pleasure,rot"
            data-statement="A collaborative digital illustration series with a goal and theme of extreme sensations. "
            data-external="">
-          <img src="../images/twisted_senses.gif" alt="twisted senses by Thierry Tran & Jonathan de la Cruz-Mendoza" class="project-thumbnail">
+          <img src="../images/twisted_senses.gif" alt="twisted senses" class="project-thumbnail">
           <div class="project-info">
             <h3 class="project-title">twisted senses (2024)</h3>
           </div>
@@ -104,28 +104,56 @@
             <h3 class="project-title">online persona (2025)</h3>
           </div>
       </div>
+
+      <div class="project-card"
+           data-title="brain dead at the dinner table"
+           data-image="../images/PROJECT-1_Brain-Dead-at-the-Dinner-Table.png"
+           data-statement="Head empty, only unrepentant table manners. This 3D render I made in Blender was my way of conveying my eating habits at the table, because I am either often distracted, trying my best to finish my plate in record time, or the thoughts in my head are completely gone by the time I get to the kitchen. ..."
+           data-external="">
+          <img src="../images/PROJECT-1_Brain-Dead-at-the-Dinner-Table.png" alt="brain dead at the dinner table" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">brain dead at the dinner table (2025)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="curiosity"
+           data-image=""
+           data-video="../videos/Lab2.mp4"
+           data-statement="..."
+           data-external="">
+          <img src="../images/curiosity-thumbnail.gif" alt="curiosity" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">curiosity (2023)</h3>
+          </div>
+      </div>
     </div>
   </div>
 
   <div class="modal-overlay" id="projectModal">
-      <button class="modal-close" id="closeModal">ESC CLOSE</button>
-      <div class="modal-content">
-          <img id="modalImage" class="modal-image" src="" alt="">
-          
-          <div class="modal-header">
-              <h2 class="modal-title" id="modalTitle"></h2>
-          </div>
+    <button class="modal-close" id="closeModal">ESC CLOSE</button>
+    <div class="modal-content">
+        <img id="modalImage" class="modal-image" src="" alt="">
+        <div id="modalVideoContainer" style="display: none;">
+            <video id="modalVideo" class="modal-video" controls>
+                <source id="modalVideoSource" src="" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="modal-header">
+            <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
 
-          <div class="modal-section">
-              <p id="modalStatement"></p>
-          </div>
+        <div class="modal-section">
+            <p id="modalStatement"></p>
+        </div>
 
-          <div id="additionalImagesContainer"></div>
+        <div id="additionalImagesContainer"></div>
 
-          <div id="externalLinkContainer" style="display: none;">
-              <a id="modalExternalLink" class="modal-link" href="" target="_blank">VIEW LIVE PROJECT →</a>
-          </div>
-      </div>
+        <div id="externalLinkContainer" style="display: none;">
+            <a id="modalExternalLink" class="modal-link" href="" target="_blank">VIEW LIVE PROJECT →</a>
+        </div>
+    </div>
   </div>
 
   <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->

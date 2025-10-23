@@ -12,6 +12,9 @@ if (document.getElementById('projectModal')) {
     const modal = document.getElementById('projectModal');
     const closeBtn = document.getElementById('closeModal');
     const modalImage = document.getElementById('modalImage');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalVideoSource = document.getElementById('modalVideoSource');
     const modalTitle = document.getElementById('modalTitle');
     const modalStatement = document.getElementById('modalStatement');
     const externalLinkContainer = document.getElementById('externalLinkContainer');
@@ -23,6 +26,7 @@ if (document.getElementById('projectModal')) {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
             const image = card.getAttribute('data-image');
+            const video = card.getAttribute('data-video');
             const images = card.getAttribute('data-images');
             const imageTitles = card.getAttribute('data-image-titles');
             const statement = card.getAttribute('data-statement');
@@ -31,8 +35,19 @@ if (document.getElementById('projectModal')) {
             modalTitle.textContent = title;
             modalStatement.textContent = statement;
 
-            // Always show the main image
-            modalImage.src = image;
+            // Check if project has video
+            if (video && video.trim() !== '') {
+                // Show video player, hide image
+                modalImage.style.display = 'none';
+                modalVideoContainer.style.display = 'block';
+                modalVideoSource.src = video;
+                modalVideo.load();
+            } else {
+                // Show image, hide video player
+                modalImage.style.display = 'block';
+                modalVideoContainer.style.display = 'none';
+                modalImage.src = image;
+            }
 
             // Clear additional images container
             additionalImagesContainer.innerHTML = '';
@@ -41,7 +56,7 @@ if (document.getElementById('projectModal')) {
             if (images && images.trim() !== '') {
                 const imageArray = images.split(',').map(img => img.trim());
                 const titleArray = imageTitles ? imageTitles.split(',').map(t => t.trim()) : [];
-
+                
                 const gridDiv = document.createElement('div');
                 gridDiv.className = 'modal-images-grid';
                 
@@ -83,23 +98,27 @@ if (document.getElementById('projectModal')) {
         });
     });
 
-    closeBtn.addEventListener('click', () => {
+    function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
-    });
+        // Pause video when closing modal
+        if (modalVideo) {
+            modalVideo.pause();
+        }
+    }
+
+    closeBtn.addEventListener('click', closeModal);
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            closeModal();
         }
     });
 
     // ESC key to close modal
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            closeModal();
         }
     });
 }
