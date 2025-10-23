@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../images/PRDX_v2.png">
 </head>
 <body class="projects">
     <!-- NAV BAR -->
@@ -21,7 +22,7 @@
       <li><a href="../index.html">HOME</a></li>
       <li><a href="../about.html">ABOUT</a></li>
       <li><a href="projects/projects.html">PROJECTS</a></li>
-      <li><a href="#">RESUME [UNAVAILABLE]</a></li>
+      <!-- <li><a href="#">RESUME [UNAVAILABLE]</a></li> -->
     </ul>
     <div class="menu-toggle">
       <span class="bar"></span>
@@ -30,7 +31,102 @@
     </div>
   </nav>
 
-  <div></div>
+  <section class="hero">
+    <h1>PROJECTS</h1>
+  </section>
+
+  <div class="projects-container">
+    <div class="projects-grid">
+      <div class="project-card"
+           data-title="Haruto Sakurai (arc 0-1)"
+           data-image="../images/Haruto_Sakurai.jpg"
+           data-statement="..."
+           data-external="">
+          <img src="../images/Haruto_Sakurai.jpg" alt="haruto sakurai v2" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">Haruto Sakurai V1 (2025)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="Haruto Sakurai (post-arc 1)"
+           data-image="../images/Haruto_post-Arc-01.jpg"
+           data-statement="..."
+           data-external="">
+          <img src="../images/Haruto_post-Arc-01.jpg" alt="haruto sakurai v2" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">Haruto Sakurai V2 (2025)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="Haruto Sakurai (3D)"
+           data-image="../images/PROJECT-4.png"
+           data-statement="..."
+           data-external="">
+          <img src="../images/PROJECT-4.png" alt="haruto sakurai 3d" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">Haruto Sakurai - 3D (2025)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="say hello [USER] to your [ADVENTURE]"
+           data-image="../images/cyoa-net-art_thumbnail.png"
+           data-statement="..."
+           data-external="https://thesmilingparadx.github.io/cyoa-net-art/main-menu.html">
+          <img src="../images/cyoa-net-art_thumbnail.png" alt="online persona" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">say hello [USER] to your [ADVENTURE] (2025)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="twisted senses"
+           data-image="../images/twisted_senses.gif"
+           data-images="../images/agony.jpg,../images/depression.png,../images/pleasure.jpg,../images/rot.png"
+           data-image-titles="agony,depression,pleasure,rot"
+           data-statement="A collaborative digital illustration series with a goal and theme of extreme sensations. "
+           data-external="">
+          <img src="../images/twisted_senses.gif" alt="twisted senses by Thierry Tran & Jonathan de la Cruz-Mendoza" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">twisted senses (2024)</h3>
+          </div>
+      </div>
+
+      <div class="project-card"
+           data-title="online persona"
+           data-image="../images/ParadX_v2.jpg"
+           data-statement="..."
+           data-external="">
+          <img src="../images/ParadX_v2.jpg" alt="online persona" class="project-thumbnail">
+          <div class="project-info">
+            <h3 class="project-title">online persona (2025)</h3>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="projectModal">
+      <button class="modal-close" id="closeModal">ESC CLOSE</button>
+      <div class="modal-content">
+          <img id="modalImage" class="modal-image" src="" alt="">
+          
+          <div class="modal-header">
+              <h2 class="modal-title" id="modalTitle"></h2>
+          </div>
+
+          <div class="modal-section">
+              <p id="modalStatement"></p>
+          </div>
+
+          <div id="additionalImagesContainer"></div>
+
+          <div id="externalLinkContainer" style="display: none;">
+              <a id="modalExternalLink" class="modal-link" href="" target="_blank">VIEW LIVE PROJECT →</a>
+          </div>
+      </div>
+  </div>
 
   <!-- //  FOOTER INFO, SOCIAL MEDIA  // -->
   <footer>

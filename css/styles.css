@@ -91,6 +91,18 @@ a:hover {
     max-width: 900px;
 }
 
+.gif-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gif-container figcaption {
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -346,5 +358,227 @@ footer {
 /* PROJECTS
 --------------------------------------------------*/
 .projects .hero {
+    position: relative;
+    height: 40vh;
+    background: url(../images/red_blood.jpg) top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid #ff003c;
+}
+
+.projects .hero h1 {
+    font-size: 70px;
+    color: #69e6f8;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px #69e6f8;
+}
+
+.projects-container {
+    max-width: 1400px;
+    margin: 60px auto 80px;
+    padding: 0 40px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #0a0a0a;
+    border: 2px solid #ff003c;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #69e6f8;
+    box-shadow: 0 5px 20px rgba(105 230 248 / 0.3);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 24px;
+    color: #69e6f8;
+    margin-bottom: 5px;
+}
+
+/* Modal Overlay */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10 10 10 / 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+    animation: fadeIn 0.3s;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    position: relative;
+}
+
+.modal-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background: #ff003c;
+    color: #0a0a0a;
+    border: none;
+    padding: 15px 25px;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    background: #69e6f8;
+    box-shadow: 0 0 20px rgba(105 230 248 / 0.5);
+}
+
+.modal-image {
+    width: 100%;
+    border: 3px solid #ff003c;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.modal-header {
+    margin-bottom: 30px;
+}
+
+.modal-title {
+    font-size: 42px;
+    color: #69e6f8;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(105 230 248 / 0.5);
+}
+
+.modal-section {
+    margin-bottom: 30px;
+}
+
+.modal-section p {
+    color: #d6d6d6;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.modal-link {
+    display: inline-block;
+    background: #ff003c;
+    color: #0a0a0a;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    border: 2px solid #ff003c;
+    margin-top: 10px;
+}
+
+.modal-link:hover {
+    background: transparent;
+    color: #ff003c;
+    box-shadow: 0 0 20px rgba(255 0 60 / 0.5);
+}
+
+.modal-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.modal-series-item {
+    text-align: center;
+}
+
+.modal-series-image {
+    width: 100%;
+    border: 2px solid #ff003c;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.modal-series-image:hover {
+    border-color: #69e6f8;
+    box-shadow: 0 0 15px rgba(105, 230, 248, 0.5);
+    transform: scale(1.02);
+}
+
+.modal-series-title {
+    color: #69e6f8;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .projects .hero h1 {
+        font-size: 40px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 20px;
+        margin: 40px 20px;
+    }
     
+    .modal-title {
+        font-size: 32px;
+    }
+
+    .modal-close {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
