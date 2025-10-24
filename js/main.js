@@ -16,6 +16,7 @@ if (document.getElementById('projectModal')) {
     const modalVideo = document.getElementById('modalVideo');
     const modalVideoSource = document.getElementById('modalVideoSource');
     const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
     const modalStatement = document.getElementById('modalStatement');
     const externalLinkContainer = document.getElementById('externalLinkContainer');
     const modalExternalLink = document.getElementById('modalExternalLink');
@@ -25,6 +26,8 @@ if (document.getElementById('projectModal')) {
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
             const title = card.getAttribute('data-title');
+            const year = card.getAttribute('data-year');
+            const software = card.getAttribute('data-software');
             const image = card.getAttribute('data-image');
             const video = card.getAttribute('data-video');
             const images = card.getAttribute('data-images');
@@ -35,15 +38,37 @@ if (document.getElementById('projectModal')) {
             modalTitle.textContent = title;
             modalStatement.textContent = statement;
 
+            // Build metadata section
+            modalMeta.innerHTML = '';
+            if (year || software) {
+                if (year) {
+                    const yearDiv = document.createElement('div');
+                    yearDiv.className = 'modal-meta-item';
+                    yearDiv.innerHTML = `
+                        <div class="modal-meta-label">Date</div>
+                        <div class="modal-meta-value">${year}</div>
+                    `;
+                    modalMeta.appendChild(yearDiv);
+                }
+                
+                if (software) {
+                    const softwareDiv = document.createElement('div');
+                    softwareDiv.className = 'modal-meta-item';
+                    softwareDiv.innerHTML = `
+                        <div class="modal-meta-label">Software</div>
+                        <div class="modal-meta-value">${software}</div>
+                    `;
+                    modalMeta.appendChild(softwareDiv);
+                }
+            }
+
             // Check if project has video
             if (video && video.trim() !== '') {
-                // Show video player, hide image
                 modalImage.style.display = 'none';
                 modalVideoContainer.style.display = 'block';
                 modalVideoSource.src = video;
                 modalVideo.load();
             } else {
-                // Show image, hide video player
                 modalImage.style.display = 'block';
                 modalVideoContainer.style.display = 'none';
                 modalImage.src = image;
@@ -60,7 +85,6 @@ if (document.getElementById('projectModal')) {
                 const gridDiv = document.createElement('div');
                 gridDiv.className = 'modal-images-grid';
                 
-                // Show ALL images from data-images
                 imageArray.forEach((imgSrc, index) => {
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'modal-series-item';
@@ -71,7 +95,6 @@ if (document.getElementById('projectModal')) {
                     img.alt = titleArray[index] || title;
                     itemDiv.appendChild(img);
 
-                    // Add title if it exists
                     if (titleArray[index]) {
                         const titleElem = document.createElement('div');
                         titleElem.className = 'modal-series-title';
@@ -101,7 +124,6 @@ if (document.getElementById('projectModal')) {
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
-        // Pause video when closing modal
         if (modalVideo) {
             modalVideo.pause();
         }
@@ -115,7 +137,6 @@ if (document.getElementById('projectModal')) {
         }
     });
 
-    // ESC key to close modal
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeModal();
