@@ -19,6 +19,10 @@ html {
     font-size: 62.5%;
 }
 
+* {
+    cursor: none !important;
+}
+
 *,
 *:before,
 *:after {
