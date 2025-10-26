@@ -107,6 +107,17 @@ a:hover {
     font-size: 1.4rem;
 }
 
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container img {
+    border-radius: 8px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
