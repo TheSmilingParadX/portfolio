@@ -27,8 +27,8 @@ function draw() {
 
     targetX = mouseX;
     targetY = mouseY;
-    cursorX += (targetX - cursorX) * 0.3;
-    cursorY += (targetY - cursorY) * 0.3;
+    cursorX += (targetX - cursorX);
+    cursorY += (targetY - cursorY);
 
     trail.push({ x: cursorX, y: cursorY });
     if (trail.length > 10) {
