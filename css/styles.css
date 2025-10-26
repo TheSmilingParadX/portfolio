@@ -217,8 +217,11 @@ a:hover {
 .home {
     background: url(../images/red_blood.jpg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .home .content-wrapper {
@@ -228,6 +231,23 @@ a:hover {
 .content-bg {
     background: rgb(10 10 10  / 0.9);
     padding: 30px;
+}
+
+.home-project-link {
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.home-project-link:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.home-project-link img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width:650px) {
